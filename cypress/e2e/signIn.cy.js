@@ -12,13 +12,6 @@ describe('Sign in page', () => {
 
     cy.get('h1').should('contain.text', 'Sign in');
 
-    cy.request('POST', 'https://conduit.mate.academy/api/users/login', {
-      user: {
-        email,
-        password
-      }
-    });
-
     cy.get('[placeholder=Email]').type(email);
     cy.get('[placeholder=Password]').type(password);
 
