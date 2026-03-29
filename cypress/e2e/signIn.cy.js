@@ -8,7 +8,7 @@ describe('Sign in page', () => {
   });
 
   it('should login user', () => {
-    const { email, password, name } = generateUser();
+    const { email, password, username } = generateUser();
 
     cy.get('h1').should('contain.text', 'Sign in');
 
@@ -17,6 +17,6 @@ describe('Sign in page', () => {
 
     cy.get('.btn').should('exist').click();
 
-    cy.get('.nav-link').should('contain.text', `${name}`);
+    cy.get('.nav-link').should('contain.text', `${username}`);
   });
 });
